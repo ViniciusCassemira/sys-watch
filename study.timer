@@ -1,9 +1,0 @@
-[Unit]
-Description=Simple Timer for Studies
-
-[Timer]
-OnBootSec=60s
-OnUnitActiveSec=60s
-
-[Install]
-WantedBy=timers.target
