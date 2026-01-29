@@ -2,7 +2,7 @@
 
 This is a study project about _Unit files_ in _Systemd_. The main purpose is understand how the services and process works with systemd. In this case, i created two unit files:
 
-`.service`: Esse service irá rodar um script python, que irá monitorar os recursos da máquina hospedeira(cpu, memoria, processos) e armazenar em arquivos de texto simples
+`.service`: This service will run a python script, which will monitor the host machine's resources (cpu, memory, processes) and store them in plain text files
 `.timer`: Configured to run the service mentioned above every x seconds
 
 ## Requirements
@@ -33,9 +33,9 @@ The project uses the following Python packages (listed in requirements.txt):
 ---
 3. Run this command inside project folder:
 ```python
-python ./functions/create_unit_files.py
+python -m functions.create_unit_files
 ```
-This python file will create the `sys_watch.service` and `sys_watch.timer` files based on the values you entered in the `.env` file, so configure these values carefully so that everything works out
+This python file will create the folder `unit_files`, `sys_watch.service` and `sys_watch.timer` files based on the values you entered in the `.env` file, so configure these values carefully so that everything works out
 
 ---
 4. Run the config script
@@ -50,7 +50,7 @@ it will:
 To run the service, just type in the terminal: `sudo systemctl start sys_watch.timer`
 
 ## Another alternative
-If you want to run the project locally only to collect metrics from your machine (without using systemd unit files), create and activate a virtual environment, install the dependencies from `requirements.txt`, and run:
+If you want to run the project locally only to collect metrics from your machine (without using systemd unit files), create and activate a [virtual environment](https://python.land/virtual-environments/virtualenv), install the dependencies from `requirements.txt`, and run:
 ```python
 python app.py
 ```
